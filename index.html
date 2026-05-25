@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>itsmesolrr</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      min-height: 100vh;
+      background: #1a1a2e;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+    h1 {
+      color: #e2e8f0;
+      font-size: 28px;
+      font-weight: 300;
+      margin-bottom: 8px;
+      letter-spacing: 2px;
+    }
+    p {
+      color: #a0aec0;
+      font-size: 14px;
+      margin-bottom: 48px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 700px;
+    }
+    a {
+      text-decoration: none;
+      background: #16213e;
+      border-radius: 16px;
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      transition: transform 0.15s, box-shadow 0.15s;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    a:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+    .icon {
+      font-size: 40px;
+    }
+    .label {
+      color: #e2e8f0;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .desc {
+      color: #718096;
+      font-size: 12px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>itsmesolrr</h1>
+  <p>유틸리티 모음</p>
+  <div class="grid">
+    <a href="calculator.html">
+      <div class="icon">🧮</div>
+      <div class="label">계산기</div>
+      <div class="desc">사칙연산 계산기</div>
+    </a>
+    <a href="timer.html">
+      <div class="icon">⏱️</div>
+      <div class="label">타이머</div>
+      <div class="desc">카운트다운 · 스톱워치</div>
+    </a>
+    <a href="counter.html">
+      <div class="icon">📝</div>
+      <div class="label">글자 수 세기</div>
+      <div class="desc">글자 · 단어 · 줄 수 측정</div>
+    </a>
+  </div>
+</body>
+</html>

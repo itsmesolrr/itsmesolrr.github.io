@@ -6,6 +6,8 @@
   <title>계산기</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    .back { position: fixed; top: 20px; left: 20px; color: #a0aec0; text-decoration: none; font-size: 14px; }
+    .back:hover { color: #e2e8f0; }
     body {
       display: flex;
       justify-content: center;
@@ -67,6 +69,7 @@
   </style>
 </head>
 <body>
+<a class="back" href="index.html">← 홈</a>
 <div class="calc">
   <div class="display">
     <div class="expr" id="expr"></div>

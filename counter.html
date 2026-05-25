@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글자 수 세기</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      min-height: 100vh;
+      background: #1a1a2e;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 20px 40px;
+    }
+    .back { position: fixed; top: 20px; left: 20px; color: #a0aec0; text-decoration: none; font-size: 14px; }
+    .back:hover { color: #e2e8f0; }
+    h2 { color: #e2e8f0; font-weight: 300; font-size: 22px; margin-bottom: 32px; }
+    textarea {
+      width: 100%;
+      max-width: 680px;
+      height: 280px;
+      background: #16213e;
+      border: none;
+      border-radius: 16px;
+      color: #e2e8f0;
+      font-size: 16px;
+      padding: 20px;
+      resize: vertical;
+      outline: none;
+      line-height: 1.6;
+    }
+    textarea::placeholder { color: #4a5568; }
+    textarea:focus { box-shadow: 0 0 0 2px #e94560; }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      width: 100%;
+      max-width: 680px;
+      margin-top: 20px;
+    }
+    .stat {
+      background: #16213e;
+      border-radius: 14px;
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .stat-value { color: #e94560; font-size: 36px; font-weight: 300; font-variant-numeric: tabular-nums; }
+    .stat-label { color: #718096; font-size: 13px; }
+    .clear-btn {
+      margin-top: 20px;
+      padding: 12px 32px;
+      background: #0f3460;
+      color: #a0c4ff;
+      border: none;
+      border-radius: 10px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+    .clear-btn:hover { opacity: 0.8; }
+  </style>
+</head>
+<body>
+  <a class="back" href="index.html">← 홈</a>
+  <h2>글자 수 세기</h2>
+  <textarea id="input" placeholder="여기에 텍스트를 입력하세요..." oninput="count()"></textarea>
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-value" id="chars">0</div>
+      <div class="stat-label">글자 수 (공백 포함)</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" id="charsNoSpace">0</div>
+      <div class="stat-label">글자 수 (공백 제외)</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" id="words">0</div>
+      <div class="stat-label">단어 수</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" id="lines">0</div>
+      <div class="stat-label">줄 수</div>
+    </div>
+  </div>
+  <button class="clear-btn" onclick="clearAll()">지우기</button>
+
+<script>
+  function count() {
+    const v = document.getElementById('input').value;
+    document.getElementById('chars').textContent = v.length;
+    document.getElementById('charsNoSpace').textContent = v.replace(/\s/g, '').length;
+    document.getElementById('words').textContent = v.trim() ? v.trim().split(/\s+/).length : 0;
+    document.getElementById('lines').textContent = v ? v.split('\n').length : 0;
+  }
+
+  function clearAll() {
+    document.getElementById('input').value = '';
+    count();
+  }
+</script>
+</body>
+</html>
